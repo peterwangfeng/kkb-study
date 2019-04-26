@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+    <style>
+        div {
+            width: 100vw;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div"></div>
+    12
+    <script>
+        axios.get('/api').then(res => res.data).then(res => {
+            let dom = echarts.init(document.getElementById('div'))
+            let option = {
+                legend: {
+                    data: res.map(item => item.name)
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: res.map(item => item.name),
+                        axisLabel: {
+                            rotate: 45
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                    }
+                ],
+                series: [
+                    {
+                        name: '姓名',
+                        type: 'bar',
+                        color: 'blue',
+                        data: res.map(item => item.value)
+                    },
+                ]
+            };
+
+            dom.setOption(option)
+
+        })
+    </script>
+</body>
+
+</html>

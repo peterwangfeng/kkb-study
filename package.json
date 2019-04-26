@@ -1,0 +1,29 @@
+{
+  "name": "kkb",
+  "version": "1.0.0",
+  "main": "cpu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "bd-img": "crawl.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "benchmark": "^2.1.4",
+    "cheerio": "^1.0.0-rc.2",
+    "cpu-stat": "^2.0.1",
+    "express": "^4.16.4",
+    "iconv-lite": "^0.4.24",
+    "mysql": "^2.16.0",
+    "puppeteer": "^1.14.0",
+    "request": "^2.88.0",
+    "wexpress": "^1.0.0"
+  },
+  "devDependencies": {
+    "imooc-spider": "^1.0.0"
+  },
+  "description": ""
+}
